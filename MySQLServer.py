@@ -16,7 +16,7 @@ def main():
             );
         cursor = conn.cursor()
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
-    except Exception as err:
+    except mysql.connector.Error as err:
         print(f"{err.__class__.__name__}: {err}")
     else:
         print("Database 'alx_book_store' created successfully!")
